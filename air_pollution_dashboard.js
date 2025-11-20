@@ -1,5 +1,5 @@
 // ==========================
-// GOOGLE EARTH ENGINE APP: AIR QUALITY DASHBOARD 
+// AIR QUALITY DASHBOARD 
 // ==========================
 
 // Load administrative boundaries (FAO GAUL)
@@ -81,7 +81,7 @@ controlPanel.add(infoPanel);
 controlPanel.add(chartPanel);
 
 // ==========================
-// ✅ DYNAMIC CITY LIST (UPDATED)
+// DYNAMIC CITY LIST 
 // ==========================
 countrySelect.onChange(function(country) {
   if (!country) return;
@@ -131,7 +131,7 @@ function getPollutantImage(pollutant, start, end, region) {
 }
 
 // ==========================
-// MAIN RUN LOGIC
+// MAIN LOGIC
 // ==========================
 runButton.onClick(function() {
   infoPanel.clear();
@@ -144,7 +144,7 @@ runButton.onClick(function() {
   var end = endDate.getValue();
 
   if (!country || !city || !pollutant) {
-    infoPanel.add(ui.Label('⚠️ Please select country, city, and pollutant.', {color: 'red'}));
+    infoPanel.add(ui.Label(' Please select country, city, and pollutant.', {color: 'red'}));
     return;
   }
 
@@ -190,7 +190,7 @@ runButton.onClick(function() {
     });
 
   chartPanel.add(chart);
-  infoPanel.add(ui.Label('✅ Visualization and chart ready for ' + city));
+  infoPanel.add(ui.Label(' Visualization and chart ready for ' + city));
 });
 
 // ==========================
@@ -215,3 +215,4 @@ map.onClick(function(coords) {
     }
   });
 });
+
